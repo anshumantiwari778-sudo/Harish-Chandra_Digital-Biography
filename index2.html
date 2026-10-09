@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harish-Chandra — A Digital Biography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6ec;--bg2:#f1ead8;--card:#fff;--ink:#1b2236;--mut:#5b6478;--gold:#9a6b00;--acc:#1f5fbf;--line:#e2d9c0;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1020;--bg2:#101730;--card:#141c38;--ink:#eef1f8;--mut:#9aa6c4;--gold:#f0b429;--acc:#6aa8ff;--line:#26335c;--on:#0b1020}}
+:root[data-theme="dark"]{--bg:#0b1020;--bg2:#101730;--card:#141c38;--ink:#eef1f8;--mut:#9aa6c4;--gold:#f0b429;--acc:#6aa8ff;--line:#26335c;--on:#0b1020}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.65}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.2;margin:0}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+#bar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--gold);z-index:20}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:16px;align-items:center;overflow-x:auto;padding:10px 20px;font-size:13px;white-space:nowrap}
+nav a{color:var(--mut);text-decoration:none}nav a:hover,nav a.on{color:var(--gold)}
+#th{margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer;font-size:13px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.hero{padding:60px 0 44px;background:radial-gradient(900px 400px at 80% -10%,color-mix(in srgb,var(--gold) 20%,transparent),transparent),var(--bg)}
+.tag{color:var(--gold);font-size:12px;letter-spacing:.12em}
+.hero h1{font-size:clamp(38px,9vw,72px);font-weight:800;margin:10px 0}
+.hero p{max-width:650px;color:var(--mut);font-size:17px}.hero .sub{color:var(--ink);font-size:19px}
+.dates{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 0}.dates span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:13px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{background:var(--gold);color:var(--on);padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--gold)}
+.btn.o{background:none;color:var(--gold)}
+section{padding:46px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,5vw,36px);margin-bottom:6px}
+.lead{color:var(--mut);margin:0 0 22px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h3{font-size:19px;margin-bottom:6px}.card p{margin:0;color:var(--mut);font-size:15px}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:36px;color:var(--gold)}
+.stat span{color:var(--mut);font-size:13px}
+pre.json{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px;overflow-x:auto;font-size:13px;line-height:1.7;margin:0}
+.k{color:var(--acc)}.s{color:var(--gold)}
+.tl{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px}
+.tl button{flex:0 0 auto;background:var(--card);border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:999px;font:600 13px 'JetBrains Mono',monospace;cursor:pointer}
+.tl button.on{background:var(--gold);color:var(--on);border-color:var(--gold)}
+#tlbox{margin-top:12px;min-height:170px}
+#tlbox h3{font-size:26px}#tlbox .where{color:var(--gold);font-size:13px;margin:4px 0 8px}
+.pn{display:flex;justify-content:space-between;margin-top:14px}
+.pn button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;cursor:pointer;font:13px Inter}
+.pn button:disabled{opacity:.35;cursor:default}
+.qs{display:flex;gap:8px;margin-top:14px}.qs button{width:12px;height:12px;border-radius:50%;border:1px solid var(--gold);background:none;padding:0;cursor:pointer}.qs button.on{background:var(--gold)}
+.quote{border-left:3px solid var(--gold);padding:6px 0 6px 18px;font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,27px);min-height:110px}
+.quote{overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.quote.drag{cursor:grabbing}
+#qtrack{display:flex;transition:transform .35s ease;will-change:transform}
+#qtrack.nodrag{transition:none}
+.qslide{flex:0 0 100%;min-width:100%;padding-right:12px;box-sizing:border-box}
+.quote small{display:block;font:14px Inter,sans-serif;color:var(--mut);margin-top:8px}
+.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px}
+.path span{background:var(--card);border:1px solid var(--line);padding:6px 12px;border-radius:8px}
+.path i{color:var(--gold);font-style:normal}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--mut);margin:8px 0 0;font-size:15px}
+.ppl .card{display:flex;gap:12px}.av{flex:0 0 42px;height:42px;border-radius:50%;background:var(--gold);color:var(--on);display:grid;place-items:center;font:700 16px 'Playfair Display',serif}
+.cmp{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+@media(max-width:560px){.cmp{grid-template-columns:1fr}}
+.byline{margin-top:22px;font-size:14px;color:var(--mut)}.byline b{color:var(--ink);font-weight:600}
+.team{margin:26px 0 18px;padding-top:22px;border-top:1px solid var(--line)}
+.team h3{margin-bottom:12px;color:var(--ink)}
+.team ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.team li{margin:0;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--ink);font-weight:500}
+footer{padding:36px 0 50px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+footer li{margin-bottom:4px}
+@media (prefers-reduced-motion:no-preference){.card{transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-3px);border-color:var(--gold)}}
+@media (prefers-reduced-motion:no-preference){
+#fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero{position:relative;overflow:hidden}.hero .wrap{position:relative;z-index:1}
+.hero::before,.hero::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(70px);opacity:.32;animation:fl 14s ease-in-out infinite alternate;pointer-events:none}
+.hero::before{background:var(--gold);left:-120px;top:-100px}
+.hero::after{background:var(--acc);right:-100px;bottom:-160px;animation-delay:-7s}
+@keyframes fl{to{transform:translate(90px,60px) scale(1.25)}}
+.hero h1{perspective:600px}
+.wd{display:inline-block;white-space:nowrap}
+.lt{display:inline-block;animation:lt .9s cubic-bezier(.2,.8,.2,1) both,wv 5s ease-in-out infinite;animation-delay:calc(var(--i)*60ms),calc(1.6s + var(--i)*140ms)}
+@keyframes lt{from{opacity:0;transform:translateY(.6em) rotateX(-80deg);filter:blur(10px)}}
+@keyframes wv{0%,100%{color:var(--ink)}45%{color:var(--gold)}}
+.tag.ty::after{content:"▍";margin-left:2px;animation:bk 1s steps(1) infinite}
+@keyframes bk{50%{opacity:0}}
+.hi{animation:fu .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fu{from{opacity:0;transform:translateY(24px)}}
+.rv{opacity:0;transform:translateY(34px) scale(.97);filter:blur(4px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s;transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none;filter:none}
+h2::after{content:"";display:block;height:3px;width:0;background:var(--gold);border-radius:3px;margin-top:8px;transition:width 1s .3s}
+h2.in::after{width:64px}
+#bar{box-shadow:0 0 12px var(--gold)}
+.card{position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--gold) 22%,transparent),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::before{opacity:1}
+.btn{position:relative;overflow:hidden;transition:transform .2s,box-shadow .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px color-mix(in srgb,var(--gold) 45%,transparent)}
+.btn:not(.o){animation:pr 2.6s infinite}
+@keyframes pr{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--gold) 55%,transparent)}70%,100%{box-shadow:0 0 0 14px transparent}}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg)}
+.btn:hover::after{animation:sw .8s}
+@keyframes sw{to{left:130%}}
+pre.jx .ln{display:inline-block;opacity:0;transform:translateX(-16px);transition:opacity .5s,transform .5s}
+pre.jx.in .ln{opacity:1;transform:none;transition-delay:calc(var(--i)*70ms)}
+.tl button{transition:transform .2s,background .25s,box-shadow .25s}
+.tl button:hover{transform:translateY(-2px)}
+.tl button.on{box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 28%,transparent)}
+#tlbox.sw>*{animation:fu .5s cubic-bezier(.2,.7,.2,1) both}
+#tlbox.sw>:nth-child(2){animation-delay:.07s}#tlbox.sw>:nth-child(3){animation-delay:.14s}#tlbox.sw>:nth-child(4){animation-delay:.21s}
+.path span{transition:transform .2s,border-color .2s,box-shadow .2s}
+.path span:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 6px 16px color-mix(in srgb,var(--gold) 30%,transparent)}
+.path i{display:inline-block;animation:ar 1.4s ease-in-out infinite}
+@keyframes ar{50%{transform:translateX(5px)}}
+.qslide{opacity:.2;transform:scale(.94);transition:opacity .6s,transform .6s}
+.qslide.act{opacity:1;transform:none}
+.av{position:relative}
+.av::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--gold);opacity:0;animation:rg 2.8s infinite}
+@keyframes rg{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.4);opacity:0}}
+summary{transition:color .2s}summary:hover{color:var(--gold)}
+details{transition:border-color .3s}details:hover{border-color:var(--gold)}
+details[open] p{animation:fu .4s both}
+#cg{position:fixed;left:0;top:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--gold) 16%,transparent),transparent 65%);pointer-events:none;z-index:1}
+}
+body{counter-reset:ch}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.06;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .1 0 0 0 .9 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+::selection{background:var(--gold);color:var(--on)}
+.hero{box-shadow:inset 0 0 120px color-mix(in srgb,var(--ink) 10%,transparent)}
+.hero p:not(.sub):not(.byline)::first-letter{float:left;font:800 3.4em/.85 'Playfair Display',serif;color:var(--gold);padding:6px 10px 0 0}
+section{position:relative}
+section::before{content:"❖";position:absolute;top:-.62em;left:50%;margin-left:-1em;background:var(--bg);padding:0 14px;color:var(--gold);font-size:18px;line-height:1}
+section h2::before{counter-increment:ch;content:"Chapter " counter(ch,upper-roman);display:block;font:600 11px 'JetBrains Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.card::after{content:"";position:absolute;inset:7px;border:1px solid transparent;border-radius:9px;pointer-events:none;transition:border-color .4s,inset .4s}
+.card:hover::after{border-color:color-mix(in srgb,var(--gold) 45%,transparent);inset:5px}
+nav a{position:relative}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+.quote{position:relative}
+.quote::before{content:"“";position:absolute;left:22px;top:-6px;font:700 110px/1 'Playfair Display',serif;color:var(--gold);opacity:.13;pointer-events:none;z-index:-1}
+#pl{position:fixed;inset:0;z-index:100;display:grid;place-items:center;cursor:pointer}
+#pl .cp{position:absolute;top:0;bottom:0;width:50.2%;background:repeating-linear-gradient(90deg,#0b1020 0 38px,#141c3a 38px 76px);transition:transform 1.3s cubic-bezier(.77,0,.18,1)}
+#pl .cl{left:0;border-right:2px solid #c99a2e}#pl .cr{right:0;border-left:2px solid #c99a2e}
+#pl.open .cl{transform:translateX(-101%)}#pl.open .cr{transform:translateX(101%)}
+#pl .ct{position:relative;z-index:2;text-align:center;color:#c99a2e;transition:opacity .6s}
+#pl.open .ct{opacity:0}
+#pl .or{font-size:26px;animation:pe 1.4s both}
+#pl .nm{font:800 clamp(28px,8vw,54px)/1.2 'Playfair Display',Georgia,serif;color:#f6e7b8;margin:10px 0;animation:pe 1.6s .3s both}
+#pl .ln2{height:1px;width:0;margin:0 auto 12px;background:#c99a2e;animation:dr 1.4s .8s forwards}
+#pl .yr{font:400 14px 'JetBrains Mono',monospace;letter-spacing:.3em;animation:pe 1.4s 1.1s both}
+@keyframes pe{from{opacity:0;letter-spacing:.5em}}
+@keyframes dr{to{width:min(260px,60vw)}}
+#dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+@media (prefers-reduced-motion:no-preference){
+.lt{animation-delay:calc(2.9s + var(--i)*60ms),calc(4.5s + var(--i)*140ms)}
+section h2{background:linear-gradient(100deg,var(--ink) 35%,var(--gold) 50%,var(--ink) 65%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fo 7s linear infinite}
+@keyframes fo{from{background-position:130% 0}to{background-position:-30% 0}}
+section::before{animation:gl 4s ease-in-out infinite}
+@keyframes gl{50%{text-shadow:0 0 14px var(--gold)}}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav><div class="wrap"><a href="#top">Home</a><a href="#profile">Profile</a><a href="#name">His name</a><a href="#timeline">Timeline</a><a href="#work">His work</a><a href="#voice">In his words</a><a href="#people">People</a><a href="#legacy">Legacy</a><a href="#sources">Sources</a><button id="th" aria-label="Toggle light or dark theme">◐ Theme</button></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div class="tag mono">// harish-chandra day · digital biography</div>
+<h1>Harish-Chandra</h1>
+<p class="sub">The boy who walked from physics into the deepest corners of mathematics.</p>
+<p>Born in Uttar Pradesh in 1923, he became the chief engineer of harmonic analysis on semisimple Lie groups, a theory that grew into a basic tool of modern number theory. This page tells his story through data, a timeline, his own words and the ideas he left behind.</p>
+<div class="dates"><span class="mono">11 Oct 1923</span><span class="mono">12 Oct 1983</span><span>Physicist → Mathematician</span></div>
+<div class="btns"><a class="btn" href="#timeline">Explore the timeline</a><a class="btn o" href="#profile">Open profile.json</a></div>
+<p class="byline">Created by <b>Divyanshi Sharma</b>, <b>Anshuman Tiwari</b> &amp; <b>Prateek Mishra</b></p>
+</div></header>
+
+<section id="profile"><div class="wrap">
+<h2>Profile.json</h2><p class="lead">A life, expressed as data.</p>
+<div class="grid" style="margin-bottom:16px">
+<div class="card stat"><b data-n="1923">1923</b><span>Born, Uttar Pradesh, India</span></div>
+<div class="card stat"><b data-n="1983">1983</b><span>Died, Princeton, New Jersey</span></div>
+<div class="card stat"><b data-n="18">18</b><span>Age at B.Sc., Allahabad</span></div>
+<div class="card stat"><b data-n="359">359</b><span>Journal pages for the discrete-series proofs</span></div>
+</div>
+<pre class="json mono">{
+  <span class="k">"name"</span>: <span class="s">"Harish-Chandra"</span>,
+  <span class="k">"born"</span>: <span class="s">"11 October 1923, Uttar Pradesh"</span>,
+  <span class="k">"died"</span>: <span class="s">"12 October 1983, Princeton, USA"</span>,
+  <span class="k">"family"</span>: <span class="s">"Kshatriya; father a civil engineer on canals"</span>,
+  <span class="k">"fields"</span>: [<span class="s">"Representation theory"</span>, <span class="s">"Harmonic analysis"</span>, <span class="s">"Lie groups"</span>],
+  <span class="k">"trained_as"</span>: <span class="s">"Theoretical physicist"</span>,
+  <span class="k">"education"</span>: [<span class="s">"Christ Church High School (at 14)"</span>, <span class="s">"Univ. of Allahabad: BSc 1941, MSc 1943"</span>,
+                <span class="s">"Cambridge: PhD 1947 under P.A.M. Dirac"</span>],
+  <span class="k">"positions"</span>: [<span class="s">"Columbia University 1951–63"</span>, <span class="s">"Institute for Advanced Study from 1963"</span>,
+                <span class="s">"IBM–von Neumann Professor (1968)"</span>],
+  <span class="k">"honours"</span>: [<span class="s">"AMS Cole Prize"</span>, <span class="s">"FRS 1973"</span>, <span class="s">"Ramanujan Medal 1974"</span>, <span class="s">"US National Academy of Sciences 1981"</span>],
+  <span class="k">"family_life"</span>: <span class="s">"Married Lalitha (Lily) Kale, 1953; daughters Premala and Devaki"</span>
+}</pre>
+</div></section>
+
+<section id="name"><div class="wrap">
+<h2>The story of a name</h2><p class="lead">Why “Harish-Chandra” has a hyphen.</p>
+<div class="grid">
+<div class="card"><h3>A king of truth</h3><p>In his youth he was simply Harishchandra, named after a legendary king famous for truthfulness since the days of the Mahabharata.</p></div>
+<div class="card"><h3>A copy editor’s hyphen</h3><p>The hyphen was added by the copy editor of his first scientific papers. He kept it, and later used “Chandra” as a family name for his daughters.</p></div>
+<div class="card"><h3>A warrior’s code</h3><p>His family were Kshatriya, the warrior caste. Choosing an academic career was exceptional for his background.</p></div>
+</div></div></section>
+
+<section id="timeline"><div class="wrap">
+<h2>Interactive timeline</h2><p class="lead">Tap a year, or use the arrow keys.</p>
+<div class="tl" id="tabs" role="tablist"></div>
+<div class="card" id="tlbox" aria-live="polite"></div>
+<div class="pn"><button id="pv">← Earlier</button><button id="nx">Later →</button></div>
+</div></section>
+
+<section><div class="wrap">
+<h2>The journey</h2><p class="lead">From the Gangetic plain to Princeton.</p>
+<div class="path"><span>Uttar Pradesh</span><i>→</i><span>Kanpur</span><i>→</i><span>Allahabad</span><i>→</i><span>Bangalore</span><i>→</i><span>Cambridge</span><i>→</i><span>Princeton</span><i>→</i><span>Harvard</span><i>→</i><span>Columbia</span><i>→</i><span>Princeton (IAS)</span></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<h2>His work, in plain language</h2><p class="lead">Symmetry is everywhere. He studied its deepest structure.</p>
+<div class="cmp" style="margin-bottom:16px">
+<div class="card"><h3>Fourier analysis</h3><p>Any wave on a line can be split into pure waves. The group involved is just the real numbers, and the Plancherel theorem says no energy is lost in the split.</p></div>
+<div class="card"><h3>His generalisation</h3><p>Do the same for a non-commutative group such as a semisimple Lie group. The pure waves become irreducible representations, and finding the Plancherel formula became his life’s goal.</p></div>
+</div>
+<div class="grid">
+<div class="card"><h3>The enveloping algebra</h3><p>His 1951 paper gave a construction of semisimple Lie algebras and the Harish-Chandra isomorphism. It won the Cole Prize.</p></div>
+<div class="card"><h3>Characters</h3><p>He extended the “character” of a representation to infinite dimensions, where it becomes a distribution rather than a function.</p></div>
+<div class="card"><h3>Subquotient theorem</h3><p>Every irreducible representation sits inside an explicit family called the principal series.</p></div>
+<div class="card"><h3>Discrete series</h3><p>Representations that appear as discrete pieces of the whole space. Constructing them was the hardest part of his programme.</p></div>
+<div class="card"><h3>Philosophy of cusp forms</h3><p>Understand the discrete part, and everything else can be built from it. It links his work to automorphic forms and number theory.</p></div>
+<div class="card"><h3>p-adic groups</h3><p>From 1968 he built a parallel theory over p-adic numbers, which he called the Lefschetz principle.</p></div>
+</div>
+</div></section>
+
+<section id="voice"><div class="wrap">
+<h2>In his own words</h2><p class="lead">Remarks recorded in Roger Howe’s memoir.</p>
+<div class="quote" id="qbox"><div id="qtrack"></div></div>
+<div class="qs" id="qdots"></div>
+</div></section>
+
+<section id="people"><div class="wrap">
+<h2>People who shaped him</h2><p class="lead">Teachers, friends and rivals across three continents.</p>
+<div class="grid ppl" id="pgrid"></div>
+</div></section>
+
+<section id="ai"><div class="wrap">
+<h2>Why it matters today</h2><p class="lead">A note for the AI and data-science generation.</p>
+<div class="grid">
+<div class="card"><h3>Symmetry runs modern science</h3><p>Group symmetry is at the heart of modern physics. In machine learning, equivariant networks are built around symmetry groups, using the same mathematical language.</p></div>
+<div class="card"><h3>Fourier ideas</h3><p>Harmonic analysis generalises the Fourier transform, an idea every signal-processing student already uses.</p></div>
+<div class="card"><h3>Pure maths pays off</h3><p>Automorphic forms, which his work feeds into, are now central to analytic number theory.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>Did you know?</h2><p class="lead">Tap to reveal.</p>
+<details><summary>A library book changed his path.</summary><p>At Allahabad he found Dirac’s <i>Principles of Quantum Mechanics</i>. Its style and ideas made him want to be a physicist.</p></details>
+<details><summary>He found errors in André Weil’s book.</summary><p>Within weeks of starting mathematics he read Weil’s book on integration on groups and reported several mistakes, including one in the proof of Pontrjagin duality. Weil fixed them in later editions.</p></details>
+<details><summary>“I am not interested in proofs.”</summary><p>Dirac’s reply to his worries about rigour pushed him to leave physics. He felt he lacked the sixth sense physics needs.</p></details>
+<details><summary>He sang while he worked.</summary><p>In the late 1950s he worked up to 18 hours a day at a small table by the kitchen of a tiny Columbia apartment, and the tone of his singing hinted at his progress.</p></details>
+<details><summary>Proofs by induction were his trademark.</summary><p>His joke: induction is like high finance. Borrow too little and you have cash-flow problems; borrow too much and you can’t pay the interest.</p></details>
+<details><summary>Long walks and old masters.</summary><p>He loved walking, sometimes ten miles along Lake Carnegie, and copied old master paintings from his youth.</p></details>
+</div></section>
+
+<section id="legacy"><div class="wrap">
+<h2>Legacy</h2><p class="lead">Teaching through lectures, not students.</p>
+<div class="grid">
+<div class="card"><h3>The Tuesday lectures</h3><p>At the IAS he lectured on his latest work every Tuesday. Notes from these lectures became books that spread his ideas worldwide.</p></div>
+<div class="card"><h3>Collected Papers</h3><p>His disciple V. S. Varadarajan edited his Collected Papers in four volumes (Springer, 1984).</p></div>
+<div class="card"><h3>A bust in Allahabad</h3><p>In October 1993 a bronze bust was unveiled at a new mathematics and physics institute in Allahabad.</p></div>
+<div class="card"><h3>An institute in his name</h3><p>The Harish-Chandra Research Institute in Prayagraj is named in his honour and works in mathematics and theoretical physics.</p></div>
+</div>
+<p class="lead" style="margin-top:22px">On the eve of his sixtieth birthday he doubted whether his work would last. The mathematics that followed has answered him. Roger Howe called him the hero of the heroic era of representation theory.</p>
+</div></section>
+
+<footer id="sources"><div class="wrap">
+<h3 style="margin-bottom:10px;color:var(--ink)">Sources</h3>
+<ul>
+<li>Roger Howe, “Harish-Chandra,” Biographical Memoirs, National Academy of Sciences (2011)</li>
+<li>R. P. Langlands, Biographical Memoirs of Fellows of the Royal Society, vol. 31 (1985)</li>
+<li>V. S. Varadarajan, J. Indian Math. Soc. 56 (1991)</li>
+<li>Harish-Chandra Research Institute, Prayagraj</li>
+</ul>
+<div class="team"><h3>Created by</h3>
+<ul><li>Divyanshi Sharma</li><li>Anshuman Tiwari</li><li>Prateek Mishra</li></ul></div>
+<p>Made for Harish-Chandra Day · CSJMU, Kanpur</p>
+</div></footer>
+
+<script>
+var T=[
+["1923","Born","Uttar Pradesh","Born 11 October 1923. His father, a civil engineer, maintained dikes and irrigation canals; the family home was his maternal grandfather’s large compound."],
+["1937–41","Schooling","Kanpur & Allahabad","Left Christ Church High School at 14, intermediate college at 16, and took his B.Sc. at Allahabad at 18."],
+["1943","M.Sc.","Allahabad","Placed first in Uttar Pradesh in physics with a perfect written paper, earning gold medals. Encouraged by K. S. Krishnan and C. V. Raman."],
+["1943–45","Bangalore","Indian Institute of Science","Studied with H. J. Bhabha. His first papers appeared in the 1944 Proceedings of the Royal Society, which introduced him to Dirac."],
+["1945–47","Cambridge","Cambridge","Sailed as World War II ended. Dirac set the Lorentz group as his thesis problem; the PhD paper appeared in 1947. He also “discovered the exciting world of mathematics.”"],
+["1947–49","Princeton","Institute for Advanced Study","Went with Dirac as his assistant and stayed two years. Here he turned from physics to mathematics."],
+["1949–50","Harvard","Jewett Fellowship","Went to learn algebraic geometry from Zariski, but the lure of Lie groups was too strong."],
+["1951","The big breakthrough","Columbia University","Joined Columbia, where he stayed until 1963. His 1951 paper on the universal enveloping algebra won the Cole Prize."],
+["1953","Marriage","Bangalore","Returned to India to propose to Lalitha Kale. Daughters Premala (1959) and Devaki (1963) followed."],
+["1955–59","White-hot years","Columbia, IAS, Paris","Characters, Fourier transforms on Lie algebras and spherical functions. He anticipated the orbit method by four years."],
+["1960","Crisis and recovery","New York","A breakdown after months of frustration. After a summer of rest, the proofs finally came smoothly."],
+["1963","Discrete series","Princeton (IAS)","Announced the regularity theorem and the discrete series. Joined the IAS permanently the same year."],
+["1966–74","Recognition","Moscow, Eugene, London","Plenary lecture at the ICM in Moscow (1966), IBM–von Neumann Professor (1968), FRS (1973), Ramanujan Medal (1974)."],
+["1975–77","Plancherel formula","Princeton","Completed the Plancherel formula for real reductive groups in three long papers, and announced the p-adic version."],
+["1980–81","US citizen","Princeton","Became a US citizen in 1980 and was elected to the National Academy of Sciences in 1981."],
+["1982–83","Last years","Princeton","Several heart attacks. He remained a gracious host at a conference for Armand Borel and died the following day, 12 October 1983."]
+];
+var Q=[
+["In Princeton I learned that not every function is analytic, and after that I couldn’t be a physicist anymore.","On leaving physics"],
+["I am not interested in proofs, but only in what nature does.","Paul Dirac, replying to Harish-Chandra"],
+["Induction is like high finance: if you don’t borrow enough, you have cash flow problems; if you borrow too much, you can’t pay the interest.","On his favourite method of proof"],
+["How can one know a mathematical statement is true without actually knowing how to prove it?","Wondering aloud after a Chevalley lecture"],
+["I don’t understand why this happened. It worked out!","From his hospital bed in 1982"]
+];
+var P=[["PD","Paul Dirac","His Cambridge supervisor, “gentle and kind, yet rather aloof.” Pointed him to representation theory."],
+["HB","Homi Bhabha","Supervised him in Bangalore and asked Dirac to correct the proofs of his first papers."],
+["CC","Claude Chevalley","Lecturer at Princeton whose approach strongly influenced his early Lie algebra work."],
+["AW","André Weil","A friend from the 1950s and one of his most faithful visitors during his last illness."],
+["GM","George Mackey","Lifelong friend whose talks brought comfort at crucial periods."],
+["RL","Robert Langlands","His deepest mathematical interaction. Built the Langlands classification on his results."],
+["AB","Armand Borel","IAS colleague and his only joint paper, on arithmetic subgroups."],
+["VV","V. S. Varadarajan","Moved from statistics to Lie theory after meeting him, and edited his Collected Papers."]];
+var tabs=document.getElementById('tabs'),box=document.getElementById('tlbox'),cur=0;
+function show(i){cur=i;[].forEach.call(tabs.children,function(b,j){b.className=j===i?'on':'';b.setAttribute('aria-selected',j===i)});
+var t=T[i];box.innerHTML='<div class="tag mono">'+t[0]+'</div><h3>'+t[1]+'</h3><div class="where mono">'+t[2]+'</div><p style="margin:0;color:var(--mut)">'+t[3]+'</p>';
+document.getElementById('pv').disabled=i===0;document.getElementById('nx').disabled=i===T.length-1;
+tabs.children[i].scrollIntoView({inline:'center',block:'nearest'});}
+T.forEach(function(t,i){var b=document.createElement('button');b.textContent=t[0];b.setAttribute('role','tab');b.onclick=function(){show(i)};tabs.appendChild(b)});
+document.getElementById('pv').onclick=function(){if(cur>0)show(cur-1)};
+document.getElementById('nx').onclick=function(){if(cur<T.length-1)show(cur+1)};
+document.getElementById('timeline').addEventListener('keydown',function(e){if(e.key==='ArrowRight'&&cur<T.length-1)show(cur+1);if(e.key==='ArrowLeft'&&cur>0)show(cur-1)});
+show(0);
+var qb=document.getElementById('qbox'),qtk=document.getElementById('qtrack'),qd=document.getElementById('qdots'),qi=0,qt;
+qtk.innerHTML=Q.map(function(q){return '<div class="qslide">“'+q[0]+'”<small>— '+q[1]+'</small></div>'}).join('');
+function sq(i){qi=(i+Q.length)%Q.length;qtk.style.transform='translateX(-'+(qi*100)+'%)';[].forEach.call(qd.children,function(b,j){b.className=j===qi?'on':''})}
+Q.forEach(function(q,i){var b=document.createElement('button');b.setAttribute('aria-label','Quote '+(i+1));b.onclick=function(){clearInterval(qt);sq(i)};qd.appendChild(b)});
+sq(0);
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)qt=setInterval(function(){sq(qi+1)},7000);
+(function(){var sx=0,sy=0,dx=0,on=false,lock=null;
+function down(e){on=true;lock=null;dx=0;sx=e.clientX;sy=e.clientY;clearInterval(qt)}
+function move(e){if(!on)return;var mx=e.clientX-sx,my=e.clientY-sy;
+if(lock===null&&(Math.abs(mx)>8||Math.abs(my)>8))lock=Math.abs(mx)>Math.abs(my)?'x':'y';
+if(lock!=='x')return;dx=mx;qtk.classList.add('nodrag');qb.classList.add('drag');
+qtk.style.transform='translateX(calc(-'+(qi*100)+'% + '+dx+'px))'}
+function up(){if(!on)return;on=false;qtk.classList.remove('nodrag');qb.classList.remove('drag');
+var th=Math.min(60,qb.clientWidth/4);
+if(lock==='x'&&dx<-th)sq(qi+1);else if(lock==='x'&&dx>th)sq(qi-1);else sq(qi)}
+qb.addEventListener('pointerdown',down);
+qb.addEventListener('pointermove',move);
+qb.addEventListener('pointerup',up);
+qb.addEventListener('pointercancel',up);
+qb.addEventListener('pointerleave',up);
+qb.addEventListener('dragstart',function(e){e.preventDefault()});
+})();
+document.getElementById('pgrid').innerHTML=P.map(function(p){return '<div class="card"><div class="av">'+p[0]+'</div><div><h3>'+p[1]+'</h3><p>'+p[2]+'</p></div></div>'}).join('');
+var bar=document.getElementById('bar'),links=[].slice.call(document.querySelectorAll('nav a'));
+addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+var cs=null;links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s&&s.getBoundingClientRect().top<120)cs=a});links.forEach(function(a){a.classList.toggle('on',a===cs)})},{passive:true});
+document.getElementById('th').onclick=function(){var r=document.documentElement,d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark')};
+(function(){
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var h=document.querySelector('.hero h1'),ht=h.textContent;
+h.setAttribute('aria-label',ht);
+h.innerHTML=ht.replace('-','-|').split('|').map(function(w,a){return '<span class="wd" aria-hidden="true">'+w.split('').map(function(ch,i){return '<span class="lt" style="--i:'+(i+a*7)+'">'+ch+'</span>'}).join('')+'</span>'}).join('');
+var tg=document.querySelector('.hero .tag'),full=tg.textContent,k=0;
+tg.textContent='';tg.classList.add('ty');
+setTimeout(function ty(){tg.textContent=full.slice(0,++k);if(k<full.length)setTimeout(ty,38)},3200);
+[].forEach.call(document.querySelectorAll('.hero .wrap>*:not(h1):not(.tag)'),function(el,i){el.classList.add('hi');el.style.animationDelay=(.9+i*.14)+'s'});
+var hero=document.getElementById('top'),cv=document.createElement('canvas'),c=cv.getContext('2d'),W,H,dpr=Math.min(devicePixelRatio||1,2),mx=-999,my=-999,ps=[],S='∑∫πλ∞∂⊗∇√θ'.split(''),col='#9a6b00',f=0,vis=true;
+cv.id='fx';hero.insertBefore(cv,hero.firstChild);
+function rs(){W=hero.clientWidth;H=hero.clientHeight;cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);
+var n=Math.round(Math.min(60,W*H/14000));ps=[];
+for(var i=0;i<n;i++)ps.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35-.05,s:Math.random()<.4?S[i%S.length]:0,z:12+Math.random()*16,a:Math.random()*6})}
+rs();addEventListener('resize',rs);
+hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+hero.addEventListener('pointerleave',function(){mx=my=-999});
+new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(hero);
+(function tick(){requestAnimationFrame(tick);if(!vis)return;
+if(f++%30===0)col=getComputedStyle(document.documentElement).getPropertyValue('--gold').trim()||col;
+c.clearRect(0,0,W,H);c.fillStyle=c.strokeStyle=col;
+for(var i=0;i<ps.length;i++){var p=ps[i],dx=p.x-mx,dy=p.y-my,d=Math.sqrt(dx*dx+dy*dy);
+if(d<120&&d>0){p.x+=dx/d*1.4;p.y+=dy/d*1.4}
+p.x+=p.vx;p.y+=p.vy;p.a+=.01;
+if(p.x<-20)p.x=W+20;if(p.x>W+20)p.x=-20;if(p.y<-20)p.y=H+20;if(p.y>H+20)p.y=-20;
+if(p.s){c.globalAlpha=.18+.1*Math.sin(p.a);c.font=p.z+'px "Playfair Display",serif';c.fillText(p.s,p.x,p.y)}
+else{c.globalAlpha=.55;c.beginPath();c.arc(p.x,p.y,1.8,0,6.3);c.fill()}
+for(var j=i+1;j<ps.length;j++){var q=ps[j],ex=p.x-q.x,ey=p.y-q.y,e2=ex*ex+ey*ey;
+if(e2<12000){c.globalAlpha=(1-e2/12000)*.28;c.beginPath();c.moveTo(p.x,p.y);c.lineTo(q.x,q.y);c.stroke()}}}
+c.globalAlpha=1})();
+var cnt=new Map(),io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+var el=e.target;io.unobserve(el);el.classList.add('in');
+if(el.tagName!=='H2')setTimeout(function(){el.classList.remove('rv','in');el.style.removeProperty('--d')},1500+parseFloat(el.style.getPropertyValue('--d')||0)*1000)})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+[].forEach.call(document.querySelectorAll('section h2,section .lead,.grid>*,.cmp>*,.path span,details,.team h3,.team li,.tl,#tlbox,.pn,.quote,.qs,footer h3,footer li'),function(el){
+var p=el.parentNode,n=cnt.get(p)||0;cnt.set(p,n+1);
+el.classList.add('rv');el.style.setProperty('--d',Math.min(n*.09,.72)+'s');io.observe(el)});
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+co.unobserve(e.target);var el=e.target,n=+el.dataset.n,t0=performance.now();
+(function st(t){var q=Math.min(1,(t-t0)/1800);el.textContent=Math.round(n*(1-Math.pow(1-q,4)));if(q<1)requestAnimationFrame(st)})(t0)})},{threshold:.6});
+[].forEach.call(document.querySelectorAll('.stat b'),function(b){b.textContent='0';co.observe(b)});
+var pj=document.querySelector('pre.json');
+pj.innerHTML=pj.innerHTML.split('\n').map(function(l,i){return '<span class="ln" style="--i:'+i+'">'+l+'</span>'}).join('\n');
+pj.classList.add('jx');
+new IntersectionObserver(function(es,o){if(es[0].isIntersecting){pj.classList.add('in');o.disconnect()}},{threshold:.25}).observe(pj);
+document.getElementById('tlbox').classList.add('sw');
+var s0=sq;sq=function(i){s0(i);[].forEach.call(qtk.children,function(s,j){s.classList.toggle('act',j===qi)})};sq(qi);
+[].forEach.call(document.querySelectorAll('.card'),function(cd){
+cd.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;
+var r=cd.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+cd.style.setProperty('--mx',x*100+'%');cd.style.setProperty('--my',y*100+'%');
+if(cd.id!=='tlbox')cd.style.transform='perspective(700px) rotateX('+((.5-y)*8)+'deg) rotateY('+((x-.5)*10)+'deg) translateY(-3px)'});
+cd.addEventListener('pointerleave',function(){cd.style.transform=''})});
+if(matchMedia('(pointer:fine)').matches){var g=document.createElement('div');g.id='cg';document.body.appendChild(g);
+var gx=innerWidth/2,gy=-400,gtx=gx,gty=gy;
+addEventListener('pointermove',function(e){gtx=e.clientX;gty=e.clientY});
+(function lp(){gx+=(gtx-gx)*.12;gy+=(gty-gy)*.12;g.style.transform='translate('+gx+'px,'+gy+'px)';requestAnimationFrame(lp)})()}
+})();
+try{history.scrollRestoration='manual'}catch(e){}
+if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+scrollTo(0,0);addEventListener('load',function(){scrollTo(0,0);setTimeout(function(){scrollTo(0,0)},60)});addEventListener('pageshow',function(){scrollTo(0,0)});
+(function(){
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var R=document.documentElement,PRE=2.9,pl=document.createElement('div');
+[].forEach.call(document.querySelectorAll('.hi'),function(el){el.style.animationDelay=(parseFloat(el.style.animationDelay)+PRE)+'s'});
+pl.id='pl';
+pl.innerHTML='<div class="cp cl"></div><div class="cp cr"></div><div class="ct"><div class="or">❖</div><div class="nm">Harish-Chandra</div><div class="ln2"></div><div class="yr">1923 — 1983</div></div>';
+document.body.appendChild(pl);R.style.overflow='hidden';
+function opn(){if(pl.classList.contains('open'))return;pl.classList.add('open');scrollTo(0,0);setTimeout(function(){scrollTo(0,0);pl.remove();R.style.overflow=''},1700)}
+pl.addEventListener('click',opn);setTimeout(opn,2300);
+var hw=document.querySelector('.hero .wrap'),tk=0;
+addEventListener('scroll',function(){if(tk)return;tk=1;requestAnimationFrame(function(){tk=0;var y=Math.min(scrollY,700);hw.style.transform='translateY('+y*.28+'px)';hw.style.opacity=Math.max(0,1-y/520)})},{passive:true});
+if(matchMedia('(pointer:fine)').matches){
+var dc=document.createElement('canvas'),dg=dc.getContext('2d'),dp=[],dw,dh,dcol='#c99a2e',df=0;
+dc.id='dust';document.body.appendChild(dc);
+var dz=function(){dw=dc.width=innerWidth;dh=dc.height=innerHeight};dz();addEventListener('resize',dz);
+addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;
+for(var i=0;i<2;i++)dp.push({x:e.clientX+(Math.random()-.5)*6,y:e.clientY+(Math.random()-.5)*6,vx:(Math.random()-.5)*.9,vy:Math.random()*.7,l:1,r:.8+Math.random()*1.8});
+if(dp.length>140)dp.splice(0,dp.length-140)});
+(function dl(){requestAnimationFrame(dl);if(!dp.length)return;
+if(df++%20===0)dcol=getComputedStyle(R).getPropertyValue('--gold').trim()||dcol;
+dg.clearRect(0,0,dw,dh);dg.fillStyle=dg.shadowColor=dcol;dg.shadowBlur=8;
+for(var i=dp.length-1;i>=0;i--){var p=dp[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.02;p.l-=.02;
+if(p.l<=0){dp.splice(i,1);continue}
+dg.globalAlpha=p.l;dg.beginPath();dg.arc(p.x,p.y,p.r,0,6.3);dg.fill()}
+if(!dp.length)dg.clearRect(0,0,dw,dh)})()}
+})();
+</script>
+</body>
+</html>
